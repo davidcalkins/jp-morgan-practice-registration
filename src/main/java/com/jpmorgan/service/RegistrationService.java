@@ -12,12 +12,21 @@ public class RegistrationService {
 	@Autowired
 	AuthorRepository authorRepo;
 	
-	public boolean registerNew(Author author) {
+	public void registerNew(Author author) {
+		
 		if (author == null) {
 			//TODO: Log error and return
+			System.out.println("Author is null");
+		}
+		else if (!authorRepo.existsByUsername(author.getUsername())) {
+			author = authorRepo.save(author);
+			System.out.println("Saved new Author");
+		}
+		else {
+			//TODO: User already exists.
+			System.out.println("Author Already Exists");
 		}
 		
-		authorRepo.save(author);
 	}
 	
 }
