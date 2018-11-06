@@ -1,23 +1,16 @@
 package com.jpmorgan.beans;
 
-import java.util.Set;
-
-import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.OneToMany;
 import javax.persistence.SequenceGenerator;
-import javax.validation.constraints.Min;
 
 @Entity
 public class Author {
 
 	@Id
-	@Min(1)
 	@Column(name = "AuthorID")
 	@SequenceGenerator(name = "AuthorID", sequenceName = "AuthorID")
 	@GeneratedValue(generator = "AuthorID", strategy = GenerationType.SEQUENCE)
