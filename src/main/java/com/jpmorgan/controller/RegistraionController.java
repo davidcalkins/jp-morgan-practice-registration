@@ -21,7 +21,6 @@ public class RegistraionController {
 	public void regiserNew(@RequestBody Author newAuthor) {
 		System.out.println(newAuthor);
 		System.out.println(newAuthor.getUsername());
-//		newAuthor.setAuthorID(1);
 		regService.registerNew(newAuthor);
 	}
 	
