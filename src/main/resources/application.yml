@@ -1,0 +1,13 @@
+server:
+  port: 4005
+
+
+spring:
+  application:
+    name: registration-service
+      
+
+eureka:
+  client:
+    service-url:
+      default-zone: http://localhost:8761/eureka
